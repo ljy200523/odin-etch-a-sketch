@@ -1,0 +1,22 @@
+#container {
+    display: flex;
+    height: 100vh;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+}
+
+.row {
+    margin: 0 30px;
+    display: flex;
+    height: 6.25%;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+.column {
+    height: 100%;
+    box-sizing: border-box;
+    border: 1px solid black;
+    aspect-ratio: 1/1;
+}

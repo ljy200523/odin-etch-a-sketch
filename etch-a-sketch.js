@@ -4,6 +4,15 @@ let numberOfSquares = initialSqaures;
 
 const container = document.querySelector("#container");
 
+function getRandomRGB(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    let red = Math.floor(Math.random() * (max - min + 1)) + min; 
+    let green = Math.floor(Math.random() * (max - min + 1)) + min;
+    let blue = Math.floor(Math.random() * (max - min + 1)) + min;
+    return `rgb(${red}, ${green}, ${blue})`;
+}
+
 function refreshGrid() {
     container.innerHTML = '';
     for (let i = 0; i < numberOfSquares; i++) {
@@ -20,12 +29,12 @@ function refreshGrid() {
     const totalDivs = document.querySelectorAll(".column");
     totalDivs.forEach(divs => {
         divs.addEventListener("mouseenter", function(event) {
-            event.target.style.backgroundColor = "blue";
+            event.target.style.backgroundColor = getRandomRGB(0, 255);
             console.log("Mouse Entered");
             console.log(event.currentTarget);
         });
         divs.addEventListener("mouseleave", function(event) {
-            event.target.style.backgroundColor = "";
+            setTimeout(() => event.target.style.backgroundColor = "", 2000);
             console.log("Mouse Left");
         });
     });
